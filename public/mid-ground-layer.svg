@@ -1,0 +1,13 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.3" filter="url(#f1)">
+    <path d="M631.999 435.5L600.499 489.5L537.499 489.5L505.999 435.5L537.499 381.5L600.499 381.5L631.999 435.5Z" stroke="#5622d2" stroke-width="2"/>
+    <path d="M1406 227.5L1374.5 281.5L1311.5 281.5L1280 227.5L1311.5 173.5L1374.5 173.5L1406 227.5Z" stroke="#5622d2" stroke-width="2"/>
+    <path d="M1588 778.5L1556.5 832.5L1493.5 832.5L1462 778.5L1493.5 724.5L1556.5 724.5L1588 778.5Z" stroke="#5622d2" stroke-width="2"/>
+    <path d="M441.5 885L410 939L347 939L315.5 885L347 831L410 831L441.5 885Z" stroke="#5622d2" stroke-width="2"/>
+  </g>
+  <defs>
+    <filter id="f1" x="0" y="0" width="100%" height="100%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+    </filter>
+  </defs>
+</svg>
