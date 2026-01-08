@@ -17,6 +17,7 @@
     const maxTiltX = 30;
     const maxTiltY = 30;
 
+    // Inverted tilt for "escaping" effect
     const rotateX = -deltaY * maxTiltX;
     const rotateY = deltaX * maxTiltY;
 
@@ -33,13 +34,30 @@
   .container {
     perspective: 1000px;
     transition: transform 0.6s ease;
-    width: 1000px;
-    height: 325px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 800px; /* adjust as needed */
+    height: 300px; /* adjust as needed */
     position: relative;
-    overflow: hidden;
     cursor: pointer;
+  }
+
+  /* Laptop image fills the container */
+  .laptop-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    user-select: none;
+    pointer-events: none; /* so mouse events go to container */
+  }
+
+  /* Video positioned absolutely inside the laptop screen */
+  .video-wrapper {
+    position: absolute;
+    top: 18%;    
+    left: 22%;   
+    width: 55%;  
+    height: 54%; 
+    overflow: hidden;
+    border-radius: 8px; 
   }
 
   video {
@@ -47,24 +65,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 12px;
-  }
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; /* so hover passes through */
-    border-radius: 12px;
-  }
-
-  .container:hover img {
-    opacity: 1;
+    pointer-events: none; 
   }
 </style>
 
@@ -75,9 +76,14 @@
   on:mousemove={handleMouseMove}
   on:mouseleave={handleMouseLeave}
 >
-  <video autoplay muted loop playsinline>
-    <source src="/smoke.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <img src="/foreground-layer.svg" alt="Hover Image" />
+  <!-- Laptop frame image -->
+  <img src="/top.png" alt="Laptop frame" class="laptop-image" />
+
+  <!-- Video inside the laptop screen -->
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline>
+      <source src="/smoke.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
