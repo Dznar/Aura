@@ -49,8 +49,8 @@
     pointer-events: none; /* so mouse events go to container */
   }
 
-  /* GIF positioned absolutely inside the laptop screen */
-  .gif-wrapper {
+  /* Video positioned absolutely inside the laptop screen */
+  .video-wrapper {
     position: absolute;
     top: 18%;    
     left: 22%;   
@@ -60,13 +60,12 @@
     border-radius: 8px; 
   }
 
-  .gif-wrapper img {
+  video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    pointer-events: none;
-    border-radius: 8px;
+    pointer-events: none; 
   }
 </style>
 
@@ -80,8 +79,11 @@
   <!-- Laptop frame image -->
   <img src="/top.png" alt="Laptop frame" class="laptop-image" />
 
-  <!-- GIF inside the laptop screen -->
-  <div class="gif-wrapper">
-    <img src="/smoke.gif" alt="Animated GIF" />
+  <!-- Video inside the laptop screen -->
+  <div class="video-wrapper">
+    <video autoplay muted loop playsinline>
+      <source src="https://res.cloudinary.com/dnvus1oig/video/upload/methslsp4lordavoyxji.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 </div>
