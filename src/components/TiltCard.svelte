@@ -49,8 +49,8 @@
     pointer-events: none; /* so mouse events go to container */
   }
 
-  /* Video positioned absolutely inside the laptop screen */
-  .video-wrapper {
+  /* GIF positioned absolutely inside the laptop screen */
+  .gif-wrapper {
     position: absolute;
     top: 18%;    
     left: 22%;   
@@ -60,12 +60,13 @@
     border-radius: 8px; 
   }
 
-  video {
+  .gif-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    pointer-events: none; 
+    pointer-events: none;
+    border-radius: 8px;
   }
 </style>
 
@@ -79,11 +80,8 @@
   <!-- Laptop frame image -->
   <img src="/top.png" alt="Laptop frame" class="laptop-image" />
 
-  <!-- Video inside the laptop screen -->
-  <div class="video-wrapper">
-    <video autoplay muted loop playsinline>
-      <source src="/smoke.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <!-- GIF inside the laptop screen -->
+  <div class="gif-wrapper">
+    <img src="/smoke.gif" alt="Animated GIF" />
   </div>
 </div>
