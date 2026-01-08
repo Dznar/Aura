@@ -1,13 +1,83 @@
-<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g opacity="0.3" filter="url(#f1)">
-    <path d="M631.999 435.5L600.499 489.5L537.499 489.5L505.999 435.5L537.499 381.5L600.499 381.5L631.999 435.5Z" stroke="#5622d2" stroke-width="2"/>
-    <path d="M1406 227.5L1374.5 281.5L1311.5 281.5L1280 227.5L1311.5 173.5L1374.5 173.5L1406 227.5Z" stroke="#5622d2" stroke-width="2"/>
-    <path d="M1588 778.5L1556.5 832.5L1493.5 832.5L1462 778.5L1493.5 724.5L1556.5 724.5L1588 778.5Z" stroke="#5622d2" stroke-width="2"/>
-    <path d="M441.5 885L410 939L347 939L315.5 885L347 831L410 831L441.5 885Z" stroke="#5622d2" stroke-width="2"/>
-  </g>
+<svg
+  width="100%"
+  height="100%"
+  viewBox="0 0 1200 600"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="xMidYMid slice"
+>
+
+  <!-- ===== DEFINITIONS ===== -->
   <defs>
-    <filter id="f1" x="0" y="0" width="100%" height="100%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
-    </filter>
+    <!-- Glow -->
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d6b4ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9be7ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#2563eb" stop-opacity="0"/>
+    </radialGradient>
   </defs>
+
+  <!-- ===== SMALL STARS ===== -->
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="140" cy="90" r="1"/>
+    <circle cx="320" cy="140" r="1.2"/>
+    <circle cx="560" cy="100" r="1"/>
+    <circle cx="820" cy="180" r="1.1"/>
+    <circle cx="1020" cy="120" r="1"/>
+    <circle cx="220" cy="420" r="1"/>
+    <circle cx="480" cy="360" r="1.1"/>
+    <circle cx="720" cy="460" r="1"/>
+    <circle cx="980" cy="420" r="1.2"/>
+  </g>
+
+  <!-- ===== MEDIUM STARS ===== -->
+  <g fill="#cbb6ff" opacity="0.9">
+    <circle cx="200" cy="260" r="2"/>
+    <circle cx="460" cy="200" r="2.2"/>
+    <circle cx="680" cy="160" r="2"/>
+    <circle cx="860" cy="320" r="2.3"/>
+    <circle cx="560" cy="480" r="2"/>
+  </g>
+
+  <!-- ===== GLOW STARS ===== -->
+  <g>
+    <circle cx="260" cy="260" r="14" fill="url(#glowPurple)"/>
+    <circle cx="640" cy="240" r="16" fill="url(#glowBlue)"/>
+    <circle cx="880" cy="190" r="12" fill="url(#glowPurple)"/>
+    <circle cx="760" cy="420" r="15" fill="url(#glowBlue)"/>
+  </g>
+
+  <!-- ===== LINKED STARS (CONSTELLATION) ===== -->
+  <g stroke="#a5b4fc" stroke-opacity="0.4" stroke-width="1">
+    <line x1="200" y1="260" x2="260" y2="260"/>
+    <line x1="260" y1="260" x2="320" y2="220"/>
+    <line x1="320" y1="220" x2="380" y2="260"/>
+  </g>
+
+  <g fill="#e0e7ff">
+    <circle cx="200" cy="260" r="2.5"/>
+    <circle cx="260" cy="260" r="2.5"/>
+    <circle cx="320" cy="220" r="2.5"/>
+    <circle cx="380" cy="260" r="2.5"/>
+  </g>
+
+  <!-- ===== HEXAGONS (SIDE ACCENTS) ===== -->
+  <g
+    stroke="#8b5cf6"
+    stroke-opacity="0.35"
+    fill="none"
+    stroke-width="1.2"
+  >
+    <!-- Left side -->
+    <polygon points="60,180 80,170 100,180 100,205 80,215 60,205"/>
+    <polygon points="90,230 110,220 130,230 130,255 110,265 90,255"/>
+
+    <!-- Right side -->
+    <polygon points="1100,160 1120,150 1140,160 1140,185 1120,195 1100,185"/>
+    <polygon points="1070,220 1090,210 1110,220 1110,245 1090,255 1070,245"/>
+  </g>
+
 </svg>

@@ -1,7 +1,7 @@
-<section id="approach" class="approach-section">
+<section id="Mission" class="Mission-section">
   <div class="container">
     <div class="content-wrapper">
-      <h2>Our Approach</h2>
+      <h2>Our Mission</h2>
       <p>
         At Auralab, we embed creative strategy into every project. We're a full-service creative agency and software development company that creates stunning, user-centric digital experiences that drive results for forward-thinking brands that want to innovate across all platforms.
       </p>
@@ -10,7 +10,7 @@
 </section>
 
 <style>
-  .approach-section {
+  .Mission-section {
     background-color: var(--background-off-white);
     padding: 4rem 0; /* A bit less padding for these sections */
   }

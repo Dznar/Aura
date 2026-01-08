@@ -17,7 +17,7 @@
     const x = (clientX / offsetWidth) - 0.5;
     const y = (clientY / offsetHeight) - 0.5;
 
-    // Apply transformations
+    // transformations
     bgLayer.style.transform = `translateX(${x * bgStrength}px) translateY(${y * bgStrength}px)`;
     midLayer.style.transform = `translateX(${x * midStrength}px) translateY(${y * midStrength}px)`;
     foreLayer.style.transform = `translateX(${x * foreStrength}px) translateY(${y * foreStrength}px)`;
@@ -59,7 +59,7 @@
 
   .parallax-wrapper {
     position: absolute;
-    top: -5%; /* Start layers slightly outside the viewport */
+    top: -5%;
     left: -5%;
     width: 110%;
     height: 110%;
@@ -109,7 +109,6 @@
     gap: 1rem;
   }
 
-  /* Make the secondary button look better on a dark background */
   :global(.hero-content .btn-secondary) {
     color: #4a1fb5;
     border-color: rgb(153 81 147 / 50%);

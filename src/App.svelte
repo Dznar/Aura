@@ -8,6 +8,7 @@
   import Services from './components/Services.svelte';
   import HeroVisual from './components/HeroVisual.svelte';
   import Footer from './components/Footer.svelte';
+  import TiltCard from './components/TiltCard.svelte';
 </script>
 
 <Header />
@@ -15,6 +16,7 @@
 <main>
   <ParallaxHero />
   <Approach />
+  <TiltCard />
   <GlobalPresence />
   <HeroVisual />
   <Services />

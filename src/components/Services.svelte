@@ -48,7 +48,7 @@
     padding: 2.5rem;
     border-top: 2px solid var(--border-color);
     transition: transform 0.4s cubic-bezier(.22,.61,.36,1), box-shadow 0.4s cubic-bezier(.22,.61,.36,1);
-    overflow: hidden; /* Hide the overflowing paragraph before hover */
+    //overflow: hidden;
   }
 
   .service-card:hover {
@@ -57,7 +57,7 @@
   }
 
   .service-card p {
-    opacity: 0;
+    opacity: 10;
     transform: translateY(25px);
     transition: opacity 0.4s cubic-bezier(.22,.61,.36,1), transform 0.4s cubic-bezier(.22,.61,.36,1);
     transition-delay: 0.1s; /* Slight delay so the card lifts first */

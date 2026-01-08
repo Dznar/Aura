@@ -42,7 +42,7 @@
       <nav class="main-nav {menuOpen ? 'active' : ''}">
         <ul>
           <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#approach">Approach</a></li>
+          <li><a href="#Mission">Mission</a></li>
           <li><a href="#news">News</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -94,23 +94,38 @@
     display: block;
   }
 
-  .main-nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2rem;
-  }
+ .main-nav a {
+  position: relative;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-  .main-nav a {
-    color: var(--text-secondary);
-    font-weight: 500;
-    font-size: 0.95rem;
-  }
-  .main-nav a:hover {
-    color: var(--text-main);
-  }
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #5622d2, #4a1fb5);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+  width: 80%;
+}
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
 
   .header-actions {
     display: flex;
