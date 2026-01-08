@@ -1,9 +1,13 @@
 <script>
-  import { onMount } from 'svelte';
+  import { link, location } from 'svelte-spa-router';
 
   let menuOpen = false;
   function toggleMenu() {
     menuOpen = !menuOpen;
+  }
+
+  function closeMenu() {
+    menuOpen = false;
   }
 
   let lastScrollY = 0;
@@ -12,15 +16,19 @@
 
   function handleScroll() {
     const currentScrollY = window.scrollY;
-    
+
     if (currentScrollY > lastScrollY) {
-      scrollingUp = false; // Scrolling down
+      scrollingUp = false;
     } else {
-      scrollingUp = true; // Scrolling up
+      scrollingUp = true;
     }
-    
+
     lastScrollY = currentScrollY;
     atTop = currentScrollY < 50;
+  }
+
+  function isActive(path) {
+    return $location === path || ($location === '/' && path === '/');
   }
 </script>
 
@@ -34,23 +42,23 @@
   <div class="container">
     <div class="header-inner">
       <div class="logo">
-        <a href="/">
+        <a href="/" use:link>
           <img src="/auralab.png" alt="AuraLAB" />
         </a>
       </div>
 
       <nav class="main-nav {menuOpen ? 'active' : ''}">
         <ul>
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#Mission">Mission</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/" use:link class:active={isActive('/')} on:click={closeMenu}>Home</a></li>
+          <li><a href="/about" use:link class:active={isActive('/about')} on:click={closeMenu}>About us</a></li>
+          <li><a href="/news" use:link class:active={isActive('/news')} on:click={closeMenu}>News</a></li>
+          <li><a href="/contact" use:link class:active={isActive('/contact')} on:click={closeMenu}>Contact us</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <a href="#start" class="btn btn-primary">Get Started</a>
-        <a href="#story" class="btn btn-secondary">Our Story</a>
+        <a href="/contact" use:link class="btn btn-primary">Get Started</a>
+        <a href="/about" use:link class="btn btn-secondary">Our Story</a>
       </div>
 
       <button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle Menu">
@@ -103,6 +111,10 @@
   transition: color 0.3s;
 }
 
+.main-nav a.active {
+  color: var(--primary-purple);
+}
+
 .main-nav a::after {
   content: '';
   position: absolute;
@@ -115,7 +127,7 @@
   transition: width 0.3s ease;
 }
 
-.main-nav a:hover::after {
+.main-nav a:hover::after, .main-nav a.active::after {
   width: 80%;
 }
 .main-nav ul {

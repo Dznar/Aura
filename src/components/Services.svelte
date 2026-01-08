@@ -48,7 +48,6 @@
     padding: 2.5rem;
     border-top: 2px solid var(--border-color);
     transition: transform 0.4s cubic-bezier(.22,.61,.36,1), box-shadow 0.4s cubic-bezier(.22,.61,.36,1);
-    //overflow: hidden;
   }
 
   .service-card:hover {

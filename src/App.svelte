@@ -1,25 +1,27 @@
 <script>
   import './app.css';
+  import Router from 'svelte-spa-router';
 
   import Header from './components/Header.svelte';
-  import Approach from './components/Approach.svelte';
-  import GlobalPresence from './components/GlobalPresence.svelte';
-  import ParallaxHero from './components/ParallaxHero.svelte';
-  import Services from './components/Services.svelte';
-  import HeroVisual from './components/HeroVisual.svelte';
   import Footer from './components/Footer.svelte';
-  import TiltCard from './components/TiltCard.svelte';
+
+  import Home from './pages/Home.svelte';
+  import About from './pages/About.svelte';
+  import Contact from './pages/Contact.svelte';
+  import News from './pages/News.svelte';
+
+  const routes = {
+    '/': Home,
+    '/about': About,
+    '/contact': Contact,
+    '/news': News
+  };
 </script>
 
 <Header />
 
 <main>
-  <ParallaxHero />
-  <Approach />
-  <TiltCard />
-  <GlobalPresence />
-  <HeroVisual />
-  <Services />
+  <Router {routes} />
 </main>
 
 <Footer />
