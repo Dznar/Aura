@@ -24,7 +24,7 @@
     <div class="services-grid">
       {#each services as service (service.title)}
         <div class="service-card">
-          <h3>{service.title}</h3>
+          <h2>{service.title}</h2>
           <p>{service.description}</p>
         </div>
       {/each}
@@ -67,7 +67,7 @@
     transform: translateY(0);
   }
 
-  h3 {
+  h2 {
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.05em;
