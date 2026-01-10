@@ -1,9 +1,6 @@
 <script>
-<<<<<<< HEAD
-=======
   import { onMount } from 'svelte';
 
->>>>>>> recovery-branch
   const newsItems = [
     {
       id: 1,
@@ -55,8 +52,6 @@
     }
   ];
 
-<<<<<<< HEAD
-=======
   let particles = [];
 
   onMount(() => {
@@ -71,7 +66,6 @@
     particles = particles;
   });
 
->>>>>>> recovery-branch
   function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -80,11 +74,6 @@
 
 <main class="news-page">
   <section class="news-hero">
-<<<<<<< HEAD
-    <div class="container">
-      <h1 class="fade-in">News & Insights</h1>
-      <p class="subtitle fade-in-delay">Stay updated with the latest from Auralab</p>
-=======
     <svg class="liquid-bg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
       <defs>
         <linearGradient id="liquid-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -108,26 +97,10 @@
     <div class="container">
       <h1 class="clip-reveal">News & Insights</h1>
       <p class="subtitle slide-in-down">Stay updated with the latest from Auralab</p>
->>>>>>> recovery-branch
     </div>
   </section>
 
   <section class="news-content">
-<<<<<<< HEAD
-    <div class="container">
-      <div class="news-grid">
-        {#each newsItems as item, i (item.id)}
-          <article class="news-card" style="animation-delay: {i * 0.1}s">
-            <div class="news-image">
-              <img src={item.image} alt={item.title} />
-              <span class="category-badge">{item.category}</span>
-            </div>
-            <div class="news-body">
-              <time class="news-date">{formatDate(item.date)}</time>
-              <h2>{item.title}</h2>
-              <p>{item.excerpt}</p>
-              <a href="#news/{item.id}" class="read-more">
-=======
     <svg class="blob-accent" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="news-blob-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -152,7 +125,6 @@
               <h2>{item.title}</h2>
               <p>{item.excerpt}</p>
               <a href="#news/{item.id}" class="read-more arrow-slide">
->>>>>>> recovery-branch
                 Read More
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M6 12l4-4-4-4"/>
@@ -169,15 +141,6 @@
 <style>
   .news-page {
     padding-top: 0;
-<<<<<<< HEAD
-  }
-
-  .news-hero {
-    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
-    color: white;
-    padding: 6rem 0 4rem;
-    text-align: center;
-=======
     position: relative;
     overflow: hidden;
   }
@@ -248,7 +211,6 @@
   .container {
     position: relative;
     z-index: 2;
->>>>>>> recovery-branch
   }
 
   .news-hero h1 {
@@ -257,17 +219,6 @@
     margin-bottom: 1rem;
   }
 
-<<<<<<< HEAD
-  .subtitle {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-  }
-
-  .news-content {
-    padding: 5rem 0;
-    background-color: var(--background-off-white);
-=======
   .clip-reveal {
     animation: clip-reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) both;
   }
@@ -333,34 +284,18 @@
     66% {
       transform: translate(100px, 100px) scale(0.9) rotate(240deg);
     }
->>>>>>> recovery-branch
   }
 
   .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2.5rem;
-<<<<<<< HEAD
-=======
     position: relative;
     z-index: 1;
->>>>>>> recovery-branch
   }
 
   .news-card {
     background: white;
-<<<<<<< HEAD
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.6s ease both;
-  }
-
-  .news-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-=======
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -386,7 +321,6 @@
   .news-card:hover {
     transform: translateY(-12px) rotate(-1deg);
     box-shadow: 0 20px 40px rgba(255, 107, 157, 0.3);
->>>>>>> recovery-branch
   }
 
   .news-image {
@@ -396,8 +330,6 @@
     overflow: hidden;
   }
 
-<<<<<<< HEAD
-=======
   .image-overlay {
     position: absolute;
     top: 0;
@@ -414,24 +346,15 @@
     opacity: 1;
   }
 
->>>>>>> recovery-branch
   .news-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-<<<<<<< HEAD
-    transition: transform 0.4s ease;
-  }
-
-  .news-card:hover .news-image img {
-    transform: scale(1.1);
-=======
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
   .news-card:hover .news-image img {
     transform: scale(1.15) rotate(2deg);
->>>>>>> recovery-branch
   }
 
   .category-badge {
@@ -439,18 +362,6 @@
     top: 1rem;
     left: 1rem;
     background: rgba(255, 255, 255, 0.95);
-<<<<<<< HEAD
-    color: var(--primary-purple);
-    padding: 0.375rem 0.875rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .news-body {
-    padding: 1.75rem;
-=======
     color: #FF6B9D;
     padding: 0.5rem 1rem;
     border-radius: 30px;
@@ -477,7 +388,6 @@
 
   .news-body {
     padding: 2rem;
->>>>>>> recovery-branch
   }
 
   .news-date {
@@ -485,8 +395,6 @@
     font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: 0.75rem;
-<<<<<<< HEAD
-=======
     font-weight: 500;
   }
 
@@ -501,7 +409,6 @@
     to {
       opacity: 1;
     }
->>>>>>> recovery-branch
   }
 
   .news-card h2 {
@@ -510,67 +417,22 @@
     line-height: 1.3;
     color: var(--text-main);
     text-align: left;
-<<<<<<< HEAD
-=======
     background: linear-gradient(135deg, #FF6B9D 0%, #6C5B7B 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
->>>>>>> recovery-branch
   }
 
   .news-card p {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-<<<<<<< HEAD
-    margin-bottom: 1.25rem;
-=======
     margin-bottom: 1.5rem;
->>>>>>> recovery-branch
   }
 
   .read-more {
     display: inline-flex;
     align-items: center;
-<<<<<<< HEAD
-    gap: 0.375rem;
-    color: var(--primary-purple);
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: gap 0.2s ease;
-  }
-
-  .read-more:hover {
-    gap: 0.625rem;
-  }
-
-  .read-more svg {
-    transition: transform 0.2s ease;
-  }
-
-  .read-more:hover svg {
-    transform: translateX(3px);
-  }
-
-  .fade-in {
-    animation: fadeInUp 0.8s ease;
-  }
-
-  .fade-in-delay {
-    animation: fadeInUp 0.8s ease 0.2s both;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-=======
     gap: 0.5rem;
     color: #FF6B9D;
     font-weight: 700;
@@ -600,7 +462,6 @@
     }
     50% {
       transform: translateX(10px);
->>>>>>> recovery-branch
     }
   }
 
@@ -608,14 +469,11 @@
     .news-grid {
       grid-template-columns: 1fr;
     }
-<<<<<<< HEAD
-=======
 
     .blob-accent {
       width: 300px;
       height: 300px;
       right: -100px;
     }
->>>>>>> recovery-branch
   }
 </style>

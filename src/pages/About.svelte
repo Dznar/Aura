@@ -2,10 +2,6 @@
   import { onMount } from 'svelte';
 
   let sections = [];
-<<<<<<< HEAD
-
-  onMount(() => {
-=======
   let particles = [];
 
   onMount(() => {
@@ -19,7 +15,6 @@
     }
     particles = particles;
 
->>>>>>> recovery-branch
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -36,11 +31,6 @@
 
 <main class="about-page">
   <section class="hero-section">
-<<<<<<< HEAD
-    <div class="container">
-      <h1 class="reveal-on-scroll" bind:this={sections[0]}>Auralab – New Generation</h1>
-      <p class="tagline reveal-on-scroll" bind:this={sections[1]}>
-=======
     <svg class="drip-svg top" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
       <defs>
         <linearGradient id="drip-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -64,17 +54,12 @@
     <div class="container">
       <h1 class="reveal-on-scroll bounce-in" bind:this={sections[0]}>Auralab – New Generation</h1>
       <p class="tagline reveal-on-scroll slide-up" bind:this={sections[1]}>
->>>>>>> recovery-branch
         We create powerful, innovative, fun, and memorable digital experiences.
       </p>
     </div>
   </section>
 
   <section class="intro-section">
-<<<<<<< HEAD
-    <div class="container">
-      <div class="content-block reveal-on-scroll" bind:this={sections[2]}>
-=======
     <svg class="blob blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="blob-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -87,7 +72,6 @@
 
     <div class="container">
       <div class="content-block reveal-on-scroll puff-in" bind:this={sections[2]}>
->>>>>>> recovery-branch
         <p class="lead">
           At Auralab, we believe that everything you need to bring your ideas to life is available under one roof. From creative strategy and conceptualization to design, development, and execution, we handle it all – delivering solutions that inspire, engage, and leave a lasting impact.
         </p>
@@ -96,11 +80,6 @@
   </section>
 
   <section class="identity-section">
-<<<<<<< HEAD
-    <div class="container">
-      <h2 class="reveal-on-scroll" bind:this={sections[3]}>Company Profile</h2>
-      <div class="content-block reveal-on-scroll" bind:this={sections[4]}>
-=======
     <svg class="blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="blob-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -114,7 +93,6 @@
     <div class="container">
       <h2 class="reveal-on-scroll scale-in" bind:this={sections[3]}>Company Profile</h2>
       <div class="content-block reveal-on-scroll slide-up" bind:this={sections[4]}>
->>>>>>> recovery-branch
         <h3>Identity</h3>
         <p>
           Building distinctive brands that stand out and stay relevant. A collective of designers, developers, and strategists, Auralab operates across continents, delivering culturally aware and globally scalable digital solutions.
@@ -125,56 +103,35 @@
 
   <section class="services-detail-section">
     <div class="container">
-<<<<<<< HEAD
-      <h2 class="reveal-on-scroll" bind:this={sections[5]}>What We Do</h2>
-      <div class="services-grid">
-        <div class="service-item reveal-on-scroll" bind:this={sections[6]} style="--delay: 0.1s">
-=======
       <h2 class="reveal-on-scroll bounce-in" bind:this={sections[5]}>What We Do</h2>
       <div class="services-grid">
         <div class="service-item reveal-on-scroll" bind:this={sections[6]} style="--delay: 0.1s">
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>Cloud / Maintenance</h3>
           <p>Reliable infrastructure and ongoing support for your digital platforms.</p>
         </div>
         <div class="service-item reveal-on-scroll" bind:this={sections[7]} style="--delay: 0.2s">
-<<<<<<< HEAD
-=======
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>Web & App Development</h3>
           <p>Designing seamless, high-performing digital platforms.</p>
         </div>
         <div class="service-item reveal-on-scroll" bind:this={sections[8]} style="--delay: 0.3s">
-<<<<<<< HEAD
-=======
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>Digital Marketing</h3>
           <p>Driving growth through data-driven campaigns and storytelling.</p>
         </div>
         <div class="service-item reveal-on-scroll" bind:this={sections[9]} style="--delay: 0.4s">
-<<<<<<< HEAD
-=======
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>Content Creation</h3>
           <p>Producing compelling visuals, videos, and copy that amplify brand voices.</p>
         </div>
         <div class="service-item reveal-on-scroll" bind:this={sections[10]} style="--delay: 0.5s">
-<<<<<<< HEAD
-=======
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>UX/UI Design</h3>
           <p>Creating intuitive, human-centered digital experiences.</p>
         </div>
         <div class="service-item reveal-on-scroll" bind:this={sections[11]} style="--delay: 0.6s">
-<<<<<<< HEAD
-=======
           <div class="bubble-icon"></div>
->>>>>>> recovery-branch
           <h3>AI & Automation Solutions</h3>
           <p>Leveraging emerging technologies to optimize business performance.</p>
         </div>
@@ -184,11 +141,7 @@
 
   <section class="approach-section">
     <div class="container">
-<<<<<<< HEAD
-      <div class="content-block reveal-on-scroll" bind:this={sections[12]}>
-=======
       <div class="content-block reveal-on-scroll puff-in" bind:this={sections[12]}>
->>>>>>> recovery-branch
         <h2>Our Approach</h2>
         <p>
           At Auralab, we believe every brand has a unique frequency. Our mission is to tune into that frequency and amplify it through design, technology, and strategy — creating digital experiences that resonate across cultures and platforms.
@@ -198,13 +151,6 @@
   </section>
 
   <section class="values-section">
-<<<<<<< HEAD
-    <div class="container">
-      <h2 class="reveal-on-scroll" bind:this={sections[13]}>Our Values</h2>
-      <div class="values-grid">
-        {#each ['Innovation', 'Collaboration', 'Integrity', 'Excellence', 'Global Mindset'] as value, i}
-          <div class="value-item reveal-on-scroll" bind:this={sections[14 + i]} style="--delay: {0.1 * (i + 1)}s">
-=======
     <svg class="drip-svg bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
       <defs>
         <linearGradient id="drip-gradient-3" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -220,7 +166,6 @@
       <div class="values-grid">
         {#each ['Innovation', 'Collaboration', 'Integrity', 'Excellence', 'Global Mindset'] as value, i}
           <div class="value-item reveal-on-scroll shake-hover" bind:this={sections[14 + i]} style="--delay: {0.1 * (i + 1)}s">
->>>>>>> recovery-branch
             <h3>{value}</h3>
           </div>
         {/each}
@@ -232,15 +177,6 @@
 <style>
   .about-page {
     padding-top: 0;
-<<<<<<< HEAD
-  }
-
-  .hero-section {
-    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
-    color: white;
-    padding: 8rem 0 5rem;
-    text-align: center;
-=======
     position: relative;
     overflow: hidden;
   }
@@ -322,7 +258,6 @@
   .container {
     position: relative;
     z-index: 2;
->>>>>>> recovery-branch
   }
 
   .hero-section h1 {
@@ -340,11 +275,6 @@
     color: rgba(255, 255, 255, 0.95);
   }
 
-<<<<<<< HEAD
-  .intro-section {
-    padding: 5rem 0;
-    background-color: var(--background-light);
-=======
   .intro-section, .identity-section, .approach-section {
     padding: 5rem 0;
     position: relative;
@@ -392,7 +322,6 @@
     50% {
       transform: translate(100px, 100px) scale(1.1) rotate(10deg);
     }
->>>>>>> recovery-branch
   }
 
   .lead {
@@ -404,16 +333,6 @@
     color: var(--text-main);
   }
 
-<<<<<<< HEAD
-  .identity-section, .approach-section {
-    padding: 5rem 0;
-    background-color: var(--background-off-white);
-  }
-
-  .services-detail-section {
-    padding: 5rem 0;
-    background-color: var(--background-light);
-=======
   .services-detail-section {
     padding: 5rem 0;
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -429,17 +348,12 @@
     50% {
       background-position: 100% 50%;
     }
->>>>>>> recovery-branch
   }
 
   .values-section {
     padding: 5rem 0 6rem;
-<<<<<<< HEAD
-    background-color: var(--background-off-white);
-=======
     background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
     position: relative;
->>>>>>> recovery-branch
   }
 
   h2 {
@@ -447,13 +361,10 @@
     margin-bottom: 3rem;
   }
 
-<<<<<<< HEAD
-=======
   .services-detail-section h2 {
     color: white;
   }
 
->>>>>>> recovery-branch
   .content-block {
     max-width: 800px;
     margin: 0 auto;
@@ -463,14 +374,10 @@
   .content-block h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-<<<<<<< HEAD
-    color: var(--primary-purple);
-=======
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
->>>>>>> recovery-branch
   }
 
   .content-block p {
@@ -487,17 +394,6 @@
 
   .service-item {
     padding: 2rem;
-<<<<<<< HEAD
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .service-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-=======
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -530,16 +426,11 @@
   .service-item:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
->>>>>>> recovery-branch
   }
 
   .service-item h3 {
     font-size: 1.2rem;
-<<<<<<< HEAD
-    color: var(--primary-purple);
-=======
     color: #667eea;
->>>>>>> recovery-branch
     margin-bottom: 0.75rem;
   }
 
@@ -558,25 +449,15 @@
   .value-item {
     padding: 2.5rem 1.5rem;
     background: white;
-<<<<<<< HEAD
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-=======
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     cursor: pointer;
->>>>>>> recovery-branch
   }
 
   .value-item:hover {
     transform: scale(1.05);
-<<<<<<< HEAD
-    box-shadow: 0 8px 20px rgba(86, 34, 210, 0.15);
-=======
     box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
     animation: shake 0.5s ease;
   }
@@ -585,7 +466,6 @@
     0%, 100% { transform: translateX(0) scale(1.05); }
     25% { transform: translateX(-5px) scale(1.05); }
     75% { transform: translateX(5px) scale(1.05); }
->>>>>>> recovery-branch
   }
 
   .value-item h3 {
@@ -594,10 +474,9 @@
     margin: 0;
   }
 
-<<<<<<< HEAD
-=======
   .reveal-on-scroll {
-    opacity: 1 !important;
+    opacity: 1;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
   .bounce-in {
@@ -667,7 +546,6 @@
       filter: blur(0);
     }
   }
->>>>>>> recovery-branch
 
   @media (max-width: 768px) {
     .services-grid {
@@ -677,13 +555,10 @@
     .values-grid {
       grid-template-columns: 1fr;
     }
-<<<<<<< HEAD
-=======
 
     .blob {
       width: 250px;
       height: 250px;
     }
->>>>>>> recovery-branch
   }
 </style>

@@ -1,9 +1,6 @@
 <script>
-<<<<<<< HEAD
-=======
   import { onMount } from 'svelte';
 
->>>>>>> recovery-branch
   let formData = {
     name: '',
     email: '',
@@ -13,8 +10,6 @@
 
   let formStatus = null;
   let isSubmitting = false;
-<<<<<<< HEAD
-=======
   let particles = [];
 
   onMount(() => {
@@ -28,7 +23,6 @@
     }
     particles = particles;
   });
->>>>>>> recovery-branch
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -56,11 +50,6 @@
 
 <main class="contact-page">
   <section class="contact-hero">
-<<<<<<< HEAD
-    <div class="container">
-      <h1 class="fade-in">Get In Touch</h1>
-      <p class="subtitle fade-in-delay">Let's bring your ideas to life</p>
-=======
     <svg class="drip-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
       <defs>
         <linearGradient id="contact-gradient-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -84,16 +73,10 @@
     <div class="container">
       <h1 class="explode-in">Get In Touch</h1>
       <p class="subtitle drop-in">Let's bring your ideas to life</p>
->>>>>>> recovery-branch
     </div>
   </section>
 
   <section class="contact-content">
-<<<<<<< HEAD
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info slide-in-left">
-=======
     <svg class="liquid-blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="contact-blob-1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -117,20 +100,14 @@
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info slide-left">
->>>>>>> recovery-branch
           <h2>Let's Connect</h2>
           <p class="intro">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
 
           <div class="info-items">
-<<<<<<< HEAD
-            <div class="info-item">
-              <div class="icon">
-=======
             <div class="info-item scale-item" style="--delay: 0.1s">
               <div class="icon icon-pulse">
->>>>>>> recovery-branch
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                   <circle cx="12" cy="10" r="3"/>
@@ -142,13 +119,8 @@
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div class="info-item">
-              <div class="icon">
-=======
             <div class="info-item scale-item" style="--delay: 0.2s">
               <div class="icon icon-pulse">
->>>>>>> recovery-branch
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                   <polyline points="22,6 12,13 2,6"/>
@@ -160,13 +132,8 @@
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div class="info-item">
-              <div class="icon">
-=======
             <div class="info-item scale-item" style="--delay: 0.3s">
               <div class="icon icon-pulse">
->>>>>>> recovery-branch
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                 </svg>
@@ -179,11 +146,7 @@
           </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="contact-form-wrapper slide-in-right">
-=======
         <div class="contact-form-wrapper slide-right">
->>>>>>> recovery-branch
           <form class="contact-form" on:submit={handleSubmit}>
             <div class="form-group">
               <label for="name">Name</label>
@@ -195,10 +158,7 @@
                 required
                 placeholder="Your name"
                 disabled={isSubmitting}
-<<<<<<< HEAD
-=======
                 class="input-focus"
->>>>>>> recovery-branch
               />
             </div>
 
@@ -212,10 +172,7 @@
                 required
                 placeholder="your@email.com"
                 disabled={isSubmitting}
-<<<<<<< HEAD
-=======
                 class="input-focus"
->>>>>>> recovery-branch
               />
             </div>
 
@@ -228,10 +185,7 @@
                 on:input={(e) => handleInput('company', e.target.value)}
                 placeholder="Your company (optional)"
                 disabled={isSubmitting}
-<<<<<<< HEAD
-=======
                 class="input-focus"
->>>>>>> recovery-branch
               />
             </div>
 
@@ -245,40 +199,25 @@
                 placeholder="Tell us about your project..."
                 rows="5"
                 disabled={isSubmitting}
-<<<<<<< HEAD
-=======
                 class="input-focus"
->>>>>>> recovery-branch
               ></textarea>
             </div>
 
             {#if formStatus === 'success'}
-<<<<<<< HEAD
-              <div class="alert alert-success">
-=======
               <div class="alert alert-success slide-down-alert">
->>>>>>> recovery-branch
                 Thank you for reaching out! We'll get back to you soon.
               </div>
             {/if}
 
             {#if formStatus === 'error'}
-<<<<<<< HEAD
-              <div class="alert alert-error">
-=======
               <div class="alert alert-error shake-alert">
->>>>>>> recovery-branch
                 Something went wrong. Please try again.
               </div>
             {/if}
 
             <button type="submit" class="btn btn-primary btn-submit" disabled={isSubmitting}>
               {#if isSubmitting}
-<<<<<<< HEAD
-                <span class="spinner"></span>
-=======
                 <span class="spinner-pulse"></span>
->>>>>>> recovery-branch
                 Sending...
               {:else}
                 Send Message
@@ -294,15 +233,6 @@
 <style>
   .contact-page {
     padding-top: 0;
-<<<<<<< HEAD
-  }
-
-  .contact-hero {
-    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
-    color: white;
-    padding: 6rem 0 4rem;
-    text-align: center;
-=======
     position: relative;
     overflow: hidden;
   }
@@ -374,7 +304,6 @@
   .container {
     position: relative;
     z-index: 2;
->>>>>>> recovery-branch
   }
 
   .contact-hero h1 {
@@ -383,16 +312,6 @@
     margin-bottom: 1rem;
   }
 
-<<<<<<< HEAD
-  .subtitle {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-  }
-
-  .contact-content {
-    padding: 5rem 0;
-=======
   .explode-in {
     animation: explode-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   }
@@ -471,7 +390,6 @@
     50% {
       transform: translate(100px, 100px) scale(1.2) rotate(15deg);
     }
->>>>>>> recovery-branch
   }
 
   .contact-grid {
@@ -479,24 +397,18 @@
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
-<<<<<<< HEAD
-=======
     position: relative;
     z-index: 1;
->>>>>>> recovery-branch
   }
 
   .contact-info h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: left;
-<<<<<<< HEAD
-=======
     background: linear-gradient(135deg, #0BA360 0%, #3CBA92 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
->>>>>>> recovery-branch
   }
 
   .intro {
@@ -518,14 +430,6 @@
     align-items: flex-start;
   }
 
-<<<<<<< HEAD
-  .icon {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
-    border-radius: 12px;
-=======
   .scale-item {
     animation: scale-in-item 0.6s ease both;
     animation-delay: var(--delay);
@@ -548,13 +452,10 @@
     height: 56px;
     background: linear-gradient(135deg, #0BA360 0%, #3CBA92 100%);
     border-radius: 16px;
->>>>>>> recovery-branch
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-<<<<<<< HEAD
-=======
     box-shadow: 0 8px 24px rgba(11, 163, 96, 0.3);
     transition: all 0.3s ease;
   }
@@ -572,7 +473,6 @@
       box-shadow: 0 8px 32px rgba(11, 163, 96, 0.5);
       transform: scale(1.05);
     }
->>>>>>> recovery-branch
   }
 
   .info-item h3 {
@@ -588,11 +488,6 @@
 
   .contact-form-wrapper {
     background: white;
-<<<<<<< HEAD
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-=======
     padding: 3rem;
     border-radius: 24px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -612,7 +507,6 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0.3;
->>>>>>> recovery-branch
   }
 
   .contact-form {
@@ -630,26 +524,6 @@
   label {
     font-weight: 600;
     color: var(--text-main);
-<<<<<<< HEAD
-    font-size: 0.95rem;
-  }
-
-  input, textarea {
-    padding: 0.875rem 1rem;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: all 0.2s ease;
-    background: var(--background-light);
-  }
-
-  input:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary-purple);
-    background: white;
-    box-shadow: 0 0 0 3px rgba(86, 34, 210, 0.1);
-=======
     font-size: 1rem;
   }
 
@@ -669,7 +543,6 @@
     background: white;
     box-shadow: 0 0 0 4px rgba(11, 163, 96, 0.1);
     transform: translateY(-2px);
->>>>>>> recovery-branch
   }
 
   input:disabled, textarea:disabled {
@@ -679,24 +552,11 @@
 
   textarea {
     resize: vertical;
-<<<<<<< HEAD
-    min-height: 120px;
-=======
     min-height: 140px;
->>>>>>> recovery-branch
   }
 
   .btn-submit {
     width: 100%;
-<<<<<<< HEAD
-    padding: 1rem;
-    font-size: 1.05rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    position: relative;
-=======
     padding: 1.25rem;
     font-size: 1.1rem;
     display: flex;
@@ -720,7 +580,6 @@
 
   .btn-submit:active:not(:disabled) {
     transform: translateY(-1px);
->>>>>>> recovery-branch
   }
 
   .btn-submit:disabled {
@@ -728,82 +587,6 @@
     cursor: not-allowed;
   }
 
-<<<<<<< HEAD
-  .spinner {
-    width: 16px;
-    height: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-  }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  .alert {
-    padding: 1rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    animation: slideDown 0.3s ease;
-  }
-
-  .alert-success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-  }
-
-  .alert-error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-  }
-
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .fade-in {
-    animation: fadeInUp 0.8s ease;
-  }
-
-  .fade-in-delay {
-    animation: fadeInUp 0.8s ease 0.2s both;
-  }
-
-  .slide-in-left {
-    animation: slideInLeft 0.8s ease;
-  }
-
-  .slide-in-right {
-    animation: slideInRight 0.8s ease;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-=======
   .spinner-pulse {
     width: 20px;
     height: 20px;
@@ -877,7 +660,6 @@
     from {
       opacity: 0;
       transform: translateX(-60px);
->>>>>>> recovery-branch
     }
     to {
       opacity: 1;
@@ -885,12 +667,6 @@
     }
   }
 
-<<<<<<< HEAD
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-=======
   .slide-right {
     animation: slide-right 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -899,7 +675,6 @@
     from {
       opacity: 0;
       transform: translateX(60px);
->>>>>>> recovery-branch
     }
     to {
       opacity: 1;
@@ -920,8 +695,6 @@
     .intro {
       text-align: center;
     }
-<<<<<<< HEAD
-=======
 
     .liquid-blob-1, .liquid-blob-2 {
       width: 300px;
@@ -931,6 +704,5 @@
     .contact-form-wrapper {
       padding: 2rem;
     }
->>>>>>> recovery-branch
   }
 </style>
