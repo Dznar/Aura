@@ -109,7 +109,7 @@
     height: 100%;
     object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    //box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   }
 
   @keyframes shuffle {
@@ -152,14 +152,13 @@
   }
 
   @media (min-width: 901px) {
-  /* Initially hide tablet and pc */
+
   .tablet, .pc {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
   }
 
-  /* Show only phone */
   .phone {
     opacity: 1;
     pointer-events: auto;
@@ -176,17 +175,17 @@
   }
 
   .grid-container.hovered .phone {
-    transform: translateX(80%) rotate(15deg) scale(0.9);
+    transform: translateX(-60%) rotate(-15deg) scale(0.6);
     z-index: 1;
   }
 
   .grid-container.hovered .tablet {
-    transform: translateX(0) rotate(0) scale(1.1);
+    transform: translateX(0) rotate(0) scale(0.9);
     z-index: 3;
   }
 
   .grid-container.hovered .pc {
-    transform: translateX(-80%) rotate(-15deg) scale(0.9);
+    transform: translateX(60%) rotate(15deg) scale(0.6);
     z-index: 2;
   }
 }

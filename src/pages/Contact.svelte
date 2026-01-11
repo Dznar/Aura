@@ -238,7 +238,7 @@
   }
 
   .contact-hero {
-    background: linear-gradient(135deg, #0BA360 0%, #3CBA92 50%, #30DD8A 100%);
+    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
     color: white;
     padding: 6rem 0 4rem;
     text-align: center;
@@ -405,7 +405,7 @@
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: left;
-    background: linear-gradient(135deg, #0BA360 0%, #3CBA92 100%);
+    background:linear-gradient(135deg, #305BDD 0%, #3CBA92 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -450,7 +450,7 @@
     flex-shrink: 0;
     width: 56px;
     height: 56px;
-    background: linear-gradient(135deg, #0BA360 0%, #3CBA92 100%);
+    background: linear-gradient(135deg, #5622d2 0%, #4a1fb5 100%);
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -539,7 +539,7 @@
 
   .input-focus:focus {
     outline: none;
-    border-color: #0BA360;
+    border-color: #30DD8A;
     background: white;
     box-shadow: 0 0 0 4px rgba(11, 163, 96, 0.1);
     transform: translateY(-2px);
@@ -564,7 +564,7 @@
     justify-content: center;
     gap: 0.75rem;
     position: relative;
-    background: linear-gradient(135deg, #0BA360 0%, #3CBA92 100%);
+    background: linear-gradient(135deg, #30DD8A 0%, #3CBA92 100%);
     border: none;
     border-radius: 12px;
     color: white;

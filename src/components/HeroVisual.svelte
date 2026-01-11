@@ -17,32 +17,60 @@
 
 <section class="hero-visual">
   <div class="parallax-bg" style="background-image: url('/bg.png'); "></div>
-  <div class="parallax-svg" style="transform: translateY({scrollY * 0.2}px);">
-    <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-          <stop offset="0%" style="stop-color:rgba(138, 43, 226, 0.3); stop-opacity:1" />
-          <stop offset="100%" style="stop-color:rgba(138, 43, 226, 0); stop-opacity:0" />
-        </radialGradient>
-        <radialGradient id="grad2" cx="20%" cy="80%" r="40%" fx="20%" fy="80%">
-          <stop offset="0%" style="stop-color:rgba(75, 0, 130, 0.4); stop-opacity:1" />
-          <stop offset="100%" style="stop-color:rgba(75, 0, 130, 0); stop-opacity:0" />
-        </radialGradient>
-        <radialGradient id="grad3" cx="80%" cy="20%" r="30%" fx="80%" fy="20%">
-          <stop offset="0%" style="stop-color:rgba(255, 20, 147, 0.3); stop-opacity:1" />
-          <stop offset="100%" style="stop-color:rgba(255, 20, 147, 0); stop-opacity:0" />
-        </radialGradient>
-      </defs>
-      <rect width="1200" height="800" fill="url(#grad1)">
-        <animate attributeName="r" from="50%" to="60%" dur="8s" repeatCount="indefinite" />
-      </rect>
-      <rect width="1200" height="800" fill="url(#grad2)">
-        <animate attributeName="r" from="40%" to="50%" dur="10s" repeatCount="indefinite" />
-      </rect>
-      <rect width="1200" height="800" fill="url(#grad3)">
-        <animate attributeName="r" from="30%" to="40%" dur="12s" repeatCount="indefinite" />
-      </rect>
-    </svg>
+  <div class="parallax-svg" style="transform: translateY({scrollY * 0.02}px);">
+
+    <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.6">
+    <!-- Constellation 1 -->
+    <path d="M400 250 L 550 350 L 600 500" stroke="white" stroke-width="0.5" />
+    <circle cx="400" cy="250" r="2" fill="white"/>
+    <circle cx="550" cy="350" r="3" fill="white"/>
+    <circle cx="600" cy="500" r="2" fill="white"/>
+
+    <!-- Constellation 2 -->
+    <path d="M1500 150 L 1650 220 L 1550 350 L 1400 300" stroke="white" stroke-width="0.5" />
+    <circle cx="1500" cy="150" r="2" fill="white"/>
+    <circle cx="1650" cy="220" r="1.5" fill="white"/>
+    <circle cx="1550" cy="350" r="3" fill="white"/>
+    <circle cx="1400" cy="300" r="2.5" fill="white"/>
+
+    <!-- Constellation 3 -->
+    <path d="M200 800 L 350 850 L 450 750" stroke="white" stroke-width="0.5" />
+    <circle cx="200" cy="800" r="1.5" fill="white"/>
+    <circle cx="350" cy="850" r="2.5" fill="white"/>
+    <circle cx="450" cy="750" r="2" fill="white"/>
+    
+   <!-- Constellation 5 -->
+
+<circle cx="100" cy="200" r="2.5" fill="white"/>
+<circle cx="200" cy="450" r="2" fill="white"/>
+<circle cx="300" cy="250" r="3" fill="white"/>
+<circle cx="400" cy="300" r="1.5" fill="white"/>
+
+<!-- Constellation 6 -->
+
+<circle cx="800" cy="100" r="3" fill="white"/>
+<circle cx="700" cy="300" r="2" fill="white"/>
+<circle cx="600" cy="400" r="1.5" fill="white"/>
+<circle cx="500" cy="150" r="2.5" fill="white"/>
+
+<!-- Constellation 7 -->
+<path d="M400 600 L 500 550 L 600 700 L 700 400" stroke="white" stroke-width="0.5" />
+<circle cx="400" cy="600" r="2" fill="white"/>
+<circle cx="500" cy="550" r="2.5" fill="white"/>
+<circle cx="600" cy="700" r="1.5" fill="white"/>
+<circle cx="700" cy="400" r="3" fill="white"/>
+
+
+    <!-- Random stars -->
+    <circle cx="100" cy="100" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="800" cy="200" r="1" fill="white" opacity="0.7"/>
+    <circle cx="1200" cy="500" r="2" fill="white" opacity="0.9"/>
+    <circle cx="1700" cy="900" r="1.5" fill="white" opacity="0.8"/>
+    <circle cx="900" cy="950" r="1" fill="white" opacity="0.6"/>
+  </g>
+</svg>
+
   </div>
   <div class="parallax-spaceman" style="transform: translateY({scrollY * 0.1}px);">
     <img src="/fallin.png" alt="Falling Spaceman" />
@@ -107,14 +135,14 @@
 
   .content-wrapper {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
-    background: rgba(0,0,0,0.5);
+    margin: -2rem auto 0;
+    padding: 1rem 1rem 7rem;
+    //background: rgba(0,0,0,0.5);
     border-radius: 12px;
   }
 
   .logo {
-    margin-bottom: 2rem;
+    margin-bottom: -2rem;
   }
 
   .logo img {
@@ -132,6 +160,6 @@
     color: rgba(255, 255, 255, 0.85);
     font-size: 1.25rem;
     max-width: 500px;
-    margin: 1rem auto 0;
+    margin: -2rem auto 0;
   }
 </style>

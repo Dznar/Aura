@@ -1,7 +1,55 @@
 <script>
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
 
   let container;
+  let activeSlide = 0;
+  let interval;
+
+  const slides = [
+    {
+      title: 'Cloud / Maintenance',
+      content: 'Reliable infrastructure and ongoing support for your digital platforms.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12" /></svg>`,
+      bgColor: '#6A82FB',
+      bgPattern: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
+    },
+    {
+      title: 'Web & App Development',
+      content: 'Designing seamless, high-performing digital platforms.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-analytics" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="4" width="18" height="12" rx="1" /><path d="M7 20h10" /><path d="M9 16v4" /><path d="M15 16v4" /><path d="M9 12v-4" /><path d="M12 12v-1" /><path d="M15 12v-2" /><path d="M12 12v-1" /></svg>`,
+      bgColor: '#FC5C7D',
+      bgPattern: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")`
+    },
+    {
+      title: 'Digital Marketing',
+      content: 'Driving growth through data-driven campaigns and storytelling.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-speakerphone" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 8a3 3 0 0 1 0 6" /><path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" /><path d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" /></svg>`,
+      bgColor: '#43e97b',
+      bgPattern: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    },
+    {
+      title: 'Content Creation',
+      content: 'Producing compelling visuals, videos, and copy that amplify brand voices.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" /><line x1="13.5" y1="6.5" x2="17.5" y2="10.5" /></svg>`,
+      bgColor: '#FF8C42',
+      bgPattern: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    },
+    {
+      title: 'UX/UI Design',
+      content: 'Creating intuitive, human-centered digital experiences.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-artboard" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="8" y="8" width="8" height="8" rx="1" /><line x1="3" y1="8" x2="4" y2="8" /><line x1="3" y1="16" x2="4" y2="16" /><line x1="8" y1="3" x2="8" y2="4" /><line x1="16" y1="3" x2="16" y2="4" /><line x1="20" y1="8" x2="21" y2="8" /><line x1="20" y1="16" x2="21" y2="16" /><line x1="8" y1="20" x2="8" y2="21" /><line x1="16" y1="20" x2="16" y2="21" /></svg>`,
+      bgColor: '#38A3A5',
+      bgPattern: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M80 0v80H0V0h80zM20 20v40h40V20H20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    },
+    {
+      title: 'AI & Automation Solutions',
+      content: 'Leveraging emerging technologies to optimize business performance.',
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-robot" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z" /><path d="M10 16h4" /><circle cx="8.5" cy="11.5" r=".5" fill="currentColor" /><circle cx="15.5" cy="11.5" r=".5" fill="currentColor" /><path d="M9 7l-1 -4" /><path d="M15 7l1 -4" /></svg>`,
+      bgColor: '#571089',
+      bgPattern: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    }
+  ];
 
   function handleMouseMove(event) {
     if (!container) return;
@@ -30,6 +78,34 @@
     container.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
   }
 
+  function nextSlide() {
+    activeSlide = (activeSlide + 1) % slides.length;
+  }
+
+  function prevSlide() {
+    activeSlide = (activeSlide - 1 + slides.length) % slides.length;
+  }
+
+  onMount(() => {
+    interval = setInterval(nextSlide, 6000);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      if(section) observer.observe(section)
+    });
+    
+    return () => {
+      clearInterval(interval);
+      if(observer) observer.disconnect();
+    }
+  });
+
   let sections = [];
   let particles = [];
 
@@ -43,18 +119,6 @@
       });
     }
     particles = particles;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => observer.observe(section));
-
-    return () => observer.disconnect();
   });
 </script>
 
@@ -109,8 +173,7 @@
   </section>
 
   <section class="identity-section"
-    role="region"
-    bind:this={container}
+    role="group"
     on:mousemove={handleMouseMove}
     on:mouseleave={handleMouseLeave}
   >
@@ -137,76 +200,33 @@
     </div>
   </section>
 
-  <section class="services-detail-section">
+  <section class="services-detail-section" style="background-color: {slides[activeSlide].bgColor}; background-image: {slides[activeSlide].bgPattern};">
     <div class="container">
-      <h2 class="reveal-on-scroll bounce-in" bind:this={sections[5]}>What We Do</h2>
-      <div class="services-grid">
-        <div class="service-item" bind:this={sections[6]} style="--delay: 0.1s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12" />
-          </svg>
-          <h3>Cloud / Maintenance</h3>
-          <p>Reliable infrastructure and ongoing support for your digital platforms.</p>
+      <h2 class="reveal-on-scroll puff-in" bind:this={sections[3]}>What We Do</h2>
+      <div class="slideshow-container">
+        {#key activeSlide}
+          <div class="service-item-slide" in:fade={{ duration: 600, delay: 300 }} out:fade={{ duration: 300 }}>
+            <div class="icon">
+              {@html slides[activeSlide].icon}
+            </div>
+            <h3>{slides[activeSlide].title}</h3>
+            <p>{slides[activeSlide].content}</p>
+          </div>
+        {/key}
+      </div>
+  
+      <div class="slide-nav">
+        <button on:click={prevSlide} aria-label="Previous Slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <div class="dots">
+          {#each slides as _, i}
+            <button class="dot" class:active={activeSlide === i} on:click={() => activeSlide = i} aria-label="Go to slide {i+1}"></button>
+          {/each}
         </div>
-        <div class="service-item" bind:this={sections[7]} style="--delay: 0.2s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-analytics" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <rect x="3" y="4" width="18" height="12" rx="1" />
-            <path d="M7 20h10" />
-            <path d="M9 16v4" />
-            <path d="M15 16v4" />
-            <path d="M9 12v-4" />
-            <path d="M12 12v-1" />
-            <path d="M15 12v-2" />
-            <path d="M12 12v-1" />
-          </svg>
-          <h3>Web & App Development</h3>
-          <p>Designing seamless, high-performing digital platforms.</p>
-        </div>
-        <div class="service-item" bind:this={sections[8]} style="--delay: 0.3s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-speakerphone" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M18 8a3 3 0 0 1 0 6" />
-            <path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" />
-            <path d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
-          </svg>
-          <h3>Digital Marketing</h3>
-          <p>Driving growth through data-driven campaigns and storytelling.</p>
-        </div>
-        <div class="service-item" bind:this={sections[9]} style="--delay: 0.4s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <line x1="15" y1="8" x2="15.01" y2="8" />
-            <rect x="4" y="4" width="16" height="16" rx="3" />
-            <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
-            <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
-          </svg>
-          <h3>Content Creation</h3>
-          <p>Producing compelling visuals, videos, and copy that amplify brand voices.</p>
-        </div>
-        <div class="service-item" bind:this={sections[10]} style="--delay: 0.5s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
-            <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
-          </svg>
-          <h3>UX/UI Design</h3>
-          <p>Creating intuitive, human-centered digital experiences.</p>
-        </div>
-        <div class="service-item" bind:this={sections[11]} style="--delay: 0.6s">
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-robot" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <path d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z" />
-            <path d="M10 16h4" />
-            <circle cx="8.5" cy="11.5" r=".5" fill="currentColor" />
-            <circle cx="15.5" cy="11.5" r=".5" fill="currentColor" />
-            <path d="M9 7l-1 -4" />
-            <path d="M15 7l1 -4" />
-          </svg>
-          <h3>AI & Automation Solutions</h3>
-          <p>Leveraging emerging technologies to optimize business performance.</p>
-        </div>
+        <button on:click={nextSlide} aria-label="Next Slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -254,7 +274,7 @@
   }
 
   .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%), url('/back.png') center center / cover no-repeat;
     color: white;
     padding: 8rem 0 5rem;
     text-align: center;
@@ -401,19 +421,114 @@
   }
 
   .services-detail-section {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    background-size: 200% 200%;
-    animation: gradient-shift 15s ease infinite;
+    padding: 5rem 2rem;
     position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    transition: background-color 1s ease;
+    background-size: auto;
+    background-repeat: repeat;
+  }
+
+  .services-detail-section h2 {
+    color: white;
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .slideshow-container {
+    position: relative;
+    min-height: 250px; /* prevent layout shift */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-item-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .service-item-slide .icon {
+    margin-bottom: 1.5rem;
+  }
+  
+  .service-item-slide .icon :global(svg) {
+    width: 60px;
+    height: 60px;
+    stroke-width: 1.5;
+  }
+
+  .service-item-slide h3 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .service-item-slide p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.6;
+    max-width: 500px;
+  }
+
+  .slide-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .slide-nav button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .slide-nav button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0 1.5rem;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .dot.active {
+    background: white;
+    transform: scale(1.2);
   }
 
   @keyframes gradient-shift {
     0%, 100% {
-      background-position: 0% 50%;
+      background-position:  50% 0%;
     }
     50% {
-      background-position: 100% 50%;
+      background-position: 50% 100%;
     }
   }
 
@@ -428,10 +543,6 @@
     margin-bottom: 3rem;
   }
 
-  .services-detail-section h2 {
-    color: white;
-  }
-
   .content-block {
     max-width: 800px;
     margin: 0 auto;
@@ -443,44 +554,8 @@
     line-height: 1.7;
   }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-
-  .service-item {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(4px);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-item:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
-
   .icon {
     margin-bottom: 1rem;
-  }
-
-
-  .service-item h3 {
-    font-size: 1.2rem;
-    color: #667eea;
-    margin-bottom: 0.75rem;
-  }
-
-  .service-item p {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin: 0;
   }
 
   .values-grid {
@@ -575,10 +650,6 @@
   }
 
   @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr;
-    }
-
     .values-grid {
       grid-template-columns: 1fr;
     }
