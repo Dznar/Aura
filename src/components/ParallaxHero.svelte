@@ -37,10 +37,6 @@
   <div class="hero-content">
     <h1>Building distinctive brands that stand out and stay <strong>relevant.</strong></h1>
     <p class="subtitle">At Auralab, we craft identities that resonate with global audiences and create lasting impact.</p>
-    <div class="button-group">
-      <a href="#work" class="btn btn-primary">Our Work</a>
-      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-    </div>
   </div>
 </section>
 
@@ -103,19 +99,8 @@
     margin: 0 auto 2rem;
   }
 
-  .button-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
 
-  :global(.hero-content .btn-secondary) {
-    color: #4a1fb5;
-    border-color: rgb(153 81 147 / 50%);
-  }
-  :global(.hero-content .btn-secondary:hover) {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: white;
-  }
+
+
 </style>
 

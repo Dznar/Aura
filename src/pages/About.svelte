@@ -1,6 +1,35 @@
 <script>
   import { onMount } from 'svelte';
 
+  let container;
+
+  function handleMouseMove(event) {
+    if (!container) return;
+    const { offsetWidth, offsetHeight } = container;
+    const rect = container.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+
+    const centerX = offsetWidth / 2;
+    const centerY = offsetHeight / 2;
+
+    const deltaX = (mouseX - centerX) / centerX;
+    const deltaY = (mouseY - centerY) / centerY;
+
+    const maxTiltX = 15;
+    const maxTiltY = 15;
+
+    const rotateX = -deltaY * maxTiltX;
+    const rotateY = deltaX * maxTiltY;
+
+    container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }
+
+  function handleMouseLeave() {
+    if (!container) return;
+    container.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+  }
+
   let sections = [];
   let particles = [];
 
@@ -79,24 +108,31 @@
     </div>
   </section>
 
-  <section class="identity-section">
-    <svg class="blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="blob-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#A8E6CF;stop-opacity:0.3" />
-          <stop offset="100%" style="stop-color:#FFD3B6;stop-opacity:0.3" />
-        </linearGradient>
-      </defs>
-      <path fill="url(#blob-gradient-2)" d="M39.5,-51.9C50.9,-42.4,59.7,-30.3,63.8,-16.6C67.9,-2.9,67.3,12.4,61.2,25.4C55.1,38.4,43.5,49.1,30.1,55.8C16.7,62.5,1.5,65.2,-13.9,64.4C-29.3,63.6,-44.9,59.3,-56.3,49.5C-67.7,39.7,-74.9,24.4,-75.8,8.7C-76.7,-7,-71.3,-23.1,-61.5,-36.2C-51.7,-49.3,-37.5,-59.4,-22.8,-64.3C-8.1,-69.2,6.9,-68.9,20.5,-63.4C34.1,-57.9,28.1,-61.4,39.5,-51.9Z" transform="translate(100 100)" class="morph" />
-    </svg>
+  <section class="identity-section"
+    role="region"
+    bind:this={container}
+    on:mousemove={handleMouseMove}
+    on:mouseleave={handleMouseLeave}
+  >
+    <div class="identity-content">
+      <div class="text-block">
+        <h2>Company Profile</h2>
+        <div>
+          <h3>Identity</h3>
+          <p>
+            Building distinctive brands that stand out and stay relevant. A collective of designers, developers, and strategists, Auralab operates across continents, delivering culturally aware and globally scalable digital solutions.
+          </p>
+        </div>
+      </div>
 
-    <div class="container">
-      <h2 class="reveal-on-scroll scale-in" bind:this={sections[3]}>Company Profile</h2>
-      <div class="content-block reveal-on-scroll slide-up" bind:this={sections[4]}>
-        <h3>Identity</h3>
-        <p>
-          Building distinctive brands that stand out and stay relevant. A collective of designers, developers, and strategists, Auralab operates across continents, delivering culturally aware and globally scalable digital solutions.
-        </p>
+      <div class="image-block">
+        <img src="/top.png" alt="Laptop frame" class="laptop-image" />
+        <div class="video-wrapper">
+          <video autoplay muted loop playsinline>
+            <source src="https://res.cloudinary.com/dnvus1oig/video/upload/methslsp4lordavoyxji.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </section>
@@ -105,33 +141,69 @@
     <div class="container">
       <h2 class="reveal-on-scroll bounce-in" bind:this={sections[5]}>What We Do</h2>
       <div class="services-grid">
-        <div class="service-item reveal-on-scroll" bind:this={sections[6]} style="--delay: 0.1s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[6]} style="--delay: 0.1s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12" />
+          </svg>
           <h3>Cloud / Maintenance</h3>
           <p>Reliable infrastructure and ongoing support for your digital platforms.</p>
         </div>
-        <div class="service-item reveal-on-scroll" bind:this={sections[7]} style="--delay: 0.2s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[7]} style="--delay: 0.2s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-analytics" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <rect x="3" y="4" width="18" height="12" rx="1" />
+            <path d="M7 20h10" />
+            <path d="M9 16v4" />
+            <path d="M15 16v4" />
+            <path d="M9 12v-4" />
+            <path d="M12 12v-1" />
+            <path d="M15 12v-2" />
+            <path d="M12 12v-1" />
+          </svg>
           <h3>Web & App Development</h3>
           <p>Designing seamless, high-performing digital platforms.</p>
         </div>
-        <div class="service-item reveal-on-scroll" bind:this={sections[8]} style="--delay: 0.3s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[8]} style="--delay: 0.3s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-speakerphone" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M18 8a3 3 0 0 1 0 6" />
+            <path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" />
+            <path d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" />
+          </svg>
           <h3>Digital Marketing</h3>
           <p>Driving growth through data-driven campaigns and storytelling.</p>
         </div>
-        <div class="service-item reveal-on-scroll" bind:this={sections[9]} style="--delay: 0.4s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[9]} style="--delay: 0.4s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-photo" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="15" y1="8" x2="15.01" y2="8" />
+            <rect x="4" y="4" width="16" height="16" rx="3" />
+            <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" />
+            <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" />
+          </svg>
           <h3>Content Creation</h3>
           <p>Producing compelling visuals, videos, and copy that amplify brand voices.</p>
         </div>
-        <div class="service-item reveal-on-scroll" bind:this={sections[10]} style="--delay: 0.5s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[10]} style="--delay: 0.5s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+            <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+          </svg>
           <h3>UX/UI Design</h3>
           <p>Creating intuitive, human-centered digital experiences.</p>
         </div>
-        <div class="service-item reveal-on-scroll" bind:this={sections[11]} style="--delay: 0.6s">
-          <div class="bubble-icon"></div>
+        <div class="service-item" bind:this={sections[11]} style="--delay: 0.6s">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-robot" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#667eea" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z" />
+            <path d="M10 16h4" />
+            <circle cx="8.5" cy="11.5" r=".5" fill="currentColor" />
+            <circle cx="15.5" cy="11.5" r=".5" fill="currentColor" />
+            <path d="M9 7l-1 -4" />
+            <path d="M15 7l1 -4" />
+          </svg>
           <h3>AI & Automation Solutions</h3>
           <p>Leveraging emerging technologies to optimize business performance.</p>
         </div>
@@ -165,7 +237,7 @@
       <h2 class="reveal-on-scroll bounce-in" bind:this={sections[13]}>Our Values</h2>
       <div class="values-grid">
         {#each ['Innovation', 'Collaboration', 'Integrity', 'Excellence', 'Global Mindset'] as value, i}
-          <div class="value-item reveal-on-scroll shake-hover" bind:this={sections[14 + i]} style="--delay: {0.1 * (i + 1)}s">
+          <div class="value-item shake-hover" bind:this={sections[14 + i]} style="--delay: {0.1 * (i + 1)}s">
             <h3>{value}</h3>
           </div>
         {/each}
@@ -306,11 +378,6 @@
     right: -100px;
   }
 
-  .blob-2 {
-    bottom: 10%;
-    left: -100px;
-  }
-
   .morph {
     animation: morph-animation 8s ease-in-out infinite;
   }
@@ -371,15 +438,6 @@
     text-align: center;
   }
 
-  .content-block h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
   .content-block p {
     font-size: 1.1rem;
     line-height: 1.7;
@@ -403,30 +461,15 @@
     overflow: hidden;
   }
 
-  .bubble-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    animation: bubble-morph 3s ease-in-out infinite;
-  }
-
-  @keyframes bubble-morph {
-    0%, 100% {
-      border-radius: 50%;
-      transform: scale(1);
-    }
-    50% {
-      border-radius: 40%;
-      transform: scale(1.1);
-    }
-  }
-
   .service-item:hover {
     transform: translateY(-15px) scale(1.03);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
+
+  .icon {
+    margin-bottom: 1rem;
+  }
+
 
   .service-item h3 {
     font-size: 1.2rem;
@@ -475,7 +518,6 @@
   }
 
   .reveal-on-scroll {
-    opacity: 1;
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
@@ -515,21 +557,6 @@
     }
   }
 
-  .scale-in {
-    animation: scale-in 0.8s ease both;
-  }
-
-  @keyframes scale-in {
-    from {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
   .puff-in {
     animation: puff-in 1s ease both;
   }
@@ -559,6 +586,80 @@
     .blob {
       width: 250px;
       height: 250px;
+    }
+  }
+
+  .identity-section {
+    perspective: 1000px;
+    transition: transform 0.6s ease;
+    padding: 5rem 0;
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+  }
+
+  .identity-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .text-block {
+    flex: 1 1 350px;
+    max-width: 500px;
+  }
+
+  .image-block {
+    flex: 1 1 500px;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .laptop-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+    border-radius: 12px;
+  }
+
+ .video-wrapper {
+    position: absolute;
+    top: 18%;
+    left: 22%;
+    width: 55%;
+    height: 49%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .identity-content {
+      flex-direction: column;
+    }
+.container {
+      width: 100% !important;
+      height: auto !important;
+      max-height: 400px;
+    }
+    .video-wrapper {
+    top: 44px;
+    left: 22%;
+    width: 55%;
+    height: 23%;
     }
   }
 </style>

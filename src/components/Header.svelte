@@ -50,16 +50,13 @@
       <nav class="main-nav {menuOpen ? 'active' : ''}">
         <ul>
           <li><a href="/" use:link class:active={isActive('/')} on:click={closeMenu}>Home</a></li>
-          <li><a href="/about" use:link class:active={isActive('/about')} on:click={closeMenu}>About us</a></li>
+          <li><a href="/about" use:link class:active={isActive('/about')} on:click={closeMenu}>Services</a></li>
           <li><a href="/news" use:link class:active={isActive('/news')} on:click={closeMenu}>News</a></li>
           <li><a href="/contact" use:link class:active={isActive('/contact')} on:click={closeMenu}>Contact us</a></li>
         </ul>
       </nav>
 
-      <div class="header-actions">
-        <a href="/contact" use:link class="btn btn-primary">Get Started</a>
-        <a href="/about" use:link class="btn btn-secondary">Our Story</a>
-      </div>
+
 
       <button class="menu-toggle" on:click={toggleMenu} aria-label="Toggle Menu">
         <span class="bar"></span>
@@ -139,12 +136,6 @@
   gap: 2rem;
 }
 
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
   .menu-toggle {
     display: none;
     background: none;
@@ -189,10 +180,6 @@
 
     .main-nav a {
       font-size: 1.5rem;
-    }
-
-    .header-actions {
-      display: none; /* Hiding buttons on mobile for simplicity, as per many modern designs */
     }
 
     .menu-toggle {
