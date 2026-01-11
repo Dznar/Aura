@@ -9,7 +9,7 @@
       </div>
 
       <div class="footer-column">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#news">News</a></li>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="footer-column">
-        <h4>Services</h4>
+        <h3>Services</h3>
         <ul>
           <li><a href="#web">Web development</a></li>
           <li><a href="#ai">AI Solutions</a></li>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="footer-column">
-        <h4>Legal</h4>
+        <h3>Legal</h3>
         <ul>
           <li><a href="#terms">Terms of service</a></li>
           <li><a href="#privacy">Privacy policy</a></li>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="footer-column social">
-        <h4>Connect</h4>
+        <h3>Connect</h3>
         <div class="social-links">
           <a href="https://instagram.com" class="social-link" aria-label="Instagram">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -46,12 +46,12 @@
 
           <a href="https://facebook.com" class="social-link" aria-label="Facebook">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 011-1h3z"/>
+              <path d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h3v-8h3l1-4h-4V8a1 1 0 011-1h3z"/>
             </svg>
           </a>
           <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h3v12H2z"/>
               <circle cx="4" cy="4" r="2"/>
             </svg>
           </a>
@@ -84,7 +84,7 @@
     margin-bottom: 3rem;
   }
 
-  .footer-column h4 {
+  .footer-column h3 {
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--text-main);
