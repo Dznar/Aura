@@ -11,7 +11,6 @@
   "keywords": [],
   "author": "",
   "dependencies": {
-    "@google/gemini-cli": "^0.23.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.3",
     "svelte": "^5.46.1",
     "svelte-spa-router": "^4.0.1",
