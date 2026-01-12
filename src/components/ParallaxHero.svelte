@@ -30,9 +30,9 @@
   on:mousemove={handleMouseMove}
   aria-label="Interactive Hero Section"
 >  <div class="parallax-wrapper">
-    <img src="/clouds.png" alt="Dreamy purple clouds" class="parallax-layer layer-bg" bind:this={bgLayer} width="1920" height="1080" />
+    <img src="/clouds.png" alt="Dreamy purple clouds" class="parallax-layer layer-bg" bind:this={bgLayer} width="1920" height="1080" loading="eager" fetchpriority="high" />
     <img src="/mid-ground-layer.svg" alt="Abstract shapes" class="parallax-layer layer-mid" bind:this={midLayer} width="1920" height="1080" />
-    <img src="/foreground-layer.svg" alt="Constellation patterns" class="parallax-layer layer-fore" bind:this={foreLayer} width="1920" height="1080" loading="eager" fetchpriority="high" />
+    <img src="/foreground-layer.svg" alt="Constellation patterns" class="parallax-layer layer-fore" bind:this={foreLayer} width="1920" height="1080" />
   </div>
   <div class="hero-content">
     <h1>Building distinctive brands that stand out and stay <strong>relevant.</strong></h1>
