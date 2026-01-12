@@ -8,8 +8,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [],
+  "keywords": [AuraLAB],
   "author": "Fakhri Mrabet",
+  "license":"Proprietary",
   "dependencies": {
     "@sveltejs/vite-plugin-svelte": "^6.2.3",
     "svelte": "^5.46.1",

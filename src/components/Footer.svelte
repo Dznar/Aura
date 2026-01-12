@@ -3,7 +3,7 @@
     <div class="footer-grid">
       <div class="footer-column brand">
         <a href="/" class="footer-logo">
-          <img src="/auralab.png" alt="Auralab" />
+          <img src="/aura.png" alt="Auralab" />
         </a>
         <p class="tagline">Where Ideas Come Alive</p>
       </div>
@@ -11,25 +11,25 @@
       <div class="footer-column">
         <h3>Company</h3>
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#news">News</a></li>
+          <li><a href="#/about">About</a></li>
+          <li><a href="#/news">News</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h3>Services</h3>
         <ul>
-          <li><a href="#web">Web development</a></li>
-          <li><a href="#ai">AI Solutions</a></li>
-          <li><a href="#design">UI/UX Design</a></li>
+          <li><a href="#/about">Web development</a></li>
+          <li><a href="#/about">AI Solutions</a></li>
+          <li><a href="#/about">UI/UX Design</a></li>
         </ul>
       </div>
 
       <div class="footer-column">
         <h3>Legal</h3>
         <ul>
-          <li><a href="#terms">Terms of service</a></li>
-          <li><a href="#privacy">Privacy policy</a></li>
+          <li><a href="#/terms">Terms of service</a></li>
+          <li><a href="#/privacy">Privacy policy</a></li>
         </ul>
       </div>
 
@@ -111,7 +111,7 @@
   }
 
   .brand .footer-logo img {
-    height: 35px;
+    height: 69px;
     margin-bottom: 0.5rem;
   }
   .brand .tagline {
