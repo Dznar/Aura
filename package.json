@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [AuraLAB],
+  "keywords": [],
   "author": "Fakhri Mrabet",
   "license":"Proprietary",
   "dependencies": {
