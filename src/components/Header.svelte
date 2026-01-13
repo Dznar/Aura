@@ -43,7 +43,7 @@
     <div class="header-inner">
       <div class="logo">
         <a href="/" use:link>
-          <img src="/auralab.png" alt="AuraLAB" />
+          <img src="/auralab.png" alt="AuraLAB" width="50" height="35"/>
         </a>
       </div>
 

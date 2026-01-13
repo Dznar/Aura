@@ -78,7 +78,7 @@
   <div class="container">
     <div class="content-wrapper">
       <div class="logo">
-        <img src="/auralab.png" alt="Auralab" />
+        <img src="/auralab.png" alt="Auralab" width="88" height="60"/>
       </div>
       <h1>Auralab Intelligence You Can Feel</h1>
       <p class="subtitle">At Auralab - Where Ideas Come Alive</p>

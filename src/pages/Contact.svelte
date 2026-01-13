@@ -564,7 +564,7 @@
     justify-content: center;
     gap: 0.75rem;
     position: relative;
-    background: linear-gradient(135deg, #30DD8A 0%, #3CBA92 100%);
+    background: linear-gradient(135deg, #306BDD 0%, #3CBA92 100%);
     border: none;
     border-radius: 12px;
     color: white;

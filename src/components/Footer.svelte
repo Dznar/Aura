@@ -3,7 +3,7 @@
     <div class="footer-grid">
       <div class="footer-column brand">
         <a href="/" class="footer-logo">
-          <img src="/aura.png" alt="Auralab" />
+          <img src="/aura.png" alt="Auralab" width="69" height="69"/>
         </a>
         <p class="tagline">Where Ideas Come Alive</p>
       </div>
@@ -73,13 +73,13 @@
 <style>
   .site-footer {
     background-color: var(--background-off-white);
-    padding: 4rem 0 2rem;
+    padding: 2rem 0 2rem;
     border-top: 1px solid var(--border-color);
   }
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 2rem;
     margin-bottom: 3rem;
   }
