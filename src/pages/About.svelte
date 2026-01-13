@@ -70,7 +70,7 @@
     const rotateX = -deltaY * maxTiltX;
     const rotateY = deltaX * maxTiltY;
 
-    container.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    container.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   }
 
   function handleMouseLeave() {
@@ -172,11 +172,13 @@
     </div>
   </section>
 
-  <section class="identity-section"
-    role="group"
-    on:mousemove={handleMouseMove}
-    on:mouseleave={handleMouseLeave}
-  >
+  <section
+  class="identity-section"
+  role="group"
+  bind:this={container}
+  on:mousemove={handleMouseMove}
+  on:mouseleave={handleMouseLeave}
+>
     <div class="identity-content">
       <div class="text-block">
         <h2>Company Profile</h2>
@@ -390,7 +392,7 @@
     height: 400px;
     opacity: 0.5;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
   }
 
   .blob-1 {
@@ -399,7 +401,7 @@
   }
 
   .morph {
-    animation: morph-animation 8s ease-in-out infinite;
+    animation: morph-animation 7s ease-in-out infinite;
   }
 
   @keyframes morph-animation {
