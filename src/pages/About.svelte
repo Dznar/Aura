@@ -194,7 +194,7 @@
         <img src="/top.png" alt="Laptop frame" class="laptop-image" />
         <div class="video-wrapper">
           <video autoplay muted loop playsinline>
-            <source src="/perfection.mp4" type="video/mp4" />
+            <source src="https://dl.dropbox.com/scl/fi/ouxrr90qvojwga2osxzli/perfection.mp4?rlkey=rkh3l1wcfnvptwqcn29mb4b3v&st=duom7bzg&dl=0" type="video/mp4" loading="eager" fetchpriority="high"/>
             Your browser does not support the video tag.
           </video>
         </div>
@@ -236,7 +236,7 @@
  <section class="approach-section">
     <div class="video-background">
         <video autoplay muted loop>
-            <source src="/backgroundvid.mp4" type="video/mp4">
+            <source src="https://dl.dropbox.com/scl/fi/je5l1ofrm00379m9go3ex/backgroundvid.mp4?rlkey=3qetg8u01dirwsplyueoq7jll&st=ykv9dd2j&dl=0" type="video/mp4"loading="eager" fetchpriority="high" />
             Your browser does not support the video tag.
         </video>
     </div>
