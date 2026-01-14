@@ -1,11 +1,16 @@
 <script>
+  import AnimatedHeroBackground from './AnimatedHeroBackground.svelte';
+
   let hero;
-  let bgLayer, midLayer, foreLayer;
+  let bgLayer, auroraLayer, midLayer, midLayer2, fogLayer, foreLayer;
 
   // Strength of the parallax effect for each layer
-  const bgStrength = 15;
-  const midStrength = 35;
-  const foreStrength = 60;
+  const bgStrength = 8;
+  const auroraStrength = 15;
+  const midStrength = 22;
+  const midStrength2 = 35;
+  const fogStrength = 45;
+  const foreStrength = 55;
 
   function handleMouseMove(event) {
     if (!hero) return;
@@ -18,9 +23,12 @@
     const y = (clientY / offsetHeight) - 0.5;
 
     // transformations
-    bgLayer.style.transform = `translateX(${x * bgStrength}px) translateY(${y * bgStrength}px)`;
-    midLayer.style.transform = `translateX(${x * midStrength}px) translateY(${y * midStrength}px)`;
-    foreLayer.style.transform = `translateX(${x * foreStrength}px) translateY(${y * foreStrength}px)`;
+    if (bgLayer) bgLayer.style.transform = `translateX(${x * bgStrength}px) translateY(${y * bgStrength}px)`;
+    if (auroraLayer) auroraLayer.style.transform = `translateX(${x * auroraStrength}px) translateY(${y * auroraStrength}px)`;
+    if (midLayer) midLayer.style.transform = `translateX(${x * midStrength}px) translateY(${y * midStrength}px)`;
+    if (midLayer2) midLayer2.style.transform = `translateX(${x * midStrength2}px) translateY(${y * midStrength2}px)`;
+    if (fogLayer) fogLayer.style.transform = `translateX(${x * fogStrength}px) translateY(${y * fogStrength}px)`;
+    if (foreLayer) foreLayer.style.transform = `translateX(${x * foreStrength}px) translateY(${y * foreStrength}px)`;
   }
 </script>
 
@@ -29,10 +37,16 @@
   bind:this={hero}
   on:mousemove={handleMouseMove}
   aria-label="Interactive Hero Section"
->  <div class="parallax-wrapper">
-    <img src="/clouds.png" alt="Dreamy purple clouds" class="parallax-layer layer-bg" bind:this={bgLayer} width="1920" height="1080" loading="eager" fetchpriority="high"  />
-    <img src="/mid-ground-layer.svg" alt="Abstract shapes" class="parallax-layer layer-mid" bind:this={midLayer} width="1920" height="1080" loading="eager" fetchpriority="high" />
-    <img src="/foreground-layer.svg" alt="Constellation patterns" class="parallax-layer layer-fore" bind:this={foreLayer} width="1920" height="1080" loading="eager" fetchpriority="high" />
+>
+  <div class="parallax-wrapper">
+    <AnimatedHeroBackground
+      bind:bg={bgLayer}
+      bind:aurora={auroraLayer}
+      bind:mountainsDistant={midLayer}
+      bind:mountainsNear={midLayer2}
+      bind:fog={fogLayer}
+      bind:fg={foreLayer}
+    />
   </div>
   <div class="hero-content">
     <h1>Building distinctive brands that stand out and stay <strong>relevant.</strong></h1>
@@ -50,7 +64,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Important for containing the layers */
-    background-color: #2c1c4f; /* Fallback color similar to clouds */
+    background-color: #0c001f; /* Darker fallback color */
   }
 
   .parallax-wrapper {
@@ -59,16 +73,18 @@
     left: -5%;
     width: 110%;
     height: 110%;
+    z-index: 1;
   }
 
-  .parallax-layer {
+  /* This is now inside AnimatedHeroBackground, but we can keep it for reference */
+  :global(.parallax-layer) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.2s ease-out; 
+    transition: transform 0.2s ease-out;
   }
 
   .hero-content {
@@ -94,13 +110,10 @@
 
   .subtitle {
     font-size: 1.1rem;
-    color: rgb(96 82 108);
+    color: rgb(160 148 172); /* Lightened for better contrast */
     max-width: 500px;
     margin: 0 auto 2rem;
   }
-
-
-
-
 </style>
+
 
