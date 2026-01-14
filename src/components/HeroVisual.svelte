@@ -16,7 +16,7 @@
 </script>
 
 <section class="hero-visual">
-  <div class="parallax-bg" style="background-image: url('/bg.png'); "></div>
+  <div class="parallax-bg" style="background-image: url('https://res.cloudinary.com/dnvus1oig/image/upload/v1768404940/ht6ypeapkawdw15ntnl6.png'); "></div>
   <div class="parallax-svg" style="transform: translateY({scrollY * 0.02}px);">
 
     <svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@
 
   </div>
   <div class="parallax-spaceman" style="transform: translateY({scrollY * 0.1}px);">
-    <img src="/fallin.png" alt="Falling Spaceman" />
+    <img src="https://res.cloudinary.com/dnvus1oig/image/upload/v1768404939/ejafvyqxaycu4z7dxfsn.png" alt="Falling Spaceman" />
   </div>
   <div class="container">
     <div class="content-wrapper">
@@ -135,7 +135,7 @@
 
   .content-wrapper {
     max-width: 800px;
-    margin: -2rem auto 0;
+    margin: -5rem auto 0;
     padding: 1rem 1rem 7rem;
     //background: rgba(0,0,0,0.5);
     border-radius: 12px;

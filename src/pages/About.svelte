@@ -8,43 +8,43 @@
 
   const slides = [
     {
-      title: 'Cloud / Maintenance',
-      content: 'Reliable infrastructure and ongoing support for your digital platforms.',
+      title: 'Cloud & Infrastructure',
+      content: `Design and manage robust cloud environments, ensuring reliable infrastructure, secure migration, and optimized performance tailored to your business needs.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-12" /></svg>`,
       bgColor: '#6A82FB',
       bgPattern: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`
     },
     {
       title: 'Web & App Development',
-      content: 'Designing seamless, high-performing digital platforms.',
+      content: `Design and build secure, high-performance websites and apps tailored to your needs, ensuring fast load times and an outstanding user experience.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-analytics" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="3" y="4" width="18" height="12" rx="1" /><path d="M7 20h10" /><path d="M9 16v4" /><path d="M15 16v4" /><path d="M9 12v-4" /><path d="M12 12v-1" /><path d="M15 12v-2" /><path d="M12 12v-1" /></svg>`,
       bgColor: '#FC5C7D',
       bgPattern: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E")`
     },
     {
       title: 'Digital Marketing',
-      content: 'Driving growth through data-driven campaigns and storytelling.',
+      content: `Drive growth through data-driven campaigns, targeted ads, SEO, and social media strategies, ensuring you reach the right audience and foster brand loyalty.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-speakerphone" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 8a3 3 0 0 1 0 6" /><path d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5" /><path d="M12 8h0l4.524 -3.77a0.9 .9 0 0 1 1.476 .692v12.156a0.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8" /></svg>`,
-      bgColor: '#43e97b',
-      bgPattern: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      bgColor: 'violet',
+      bgPattern: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
     },
     {
       title: 'Content Creation',
-      content: 'Producing compelling visuals, videos, and copy that amplify brand voices.',
+      content: `Craft compelling visuals, videos, and copy that resonate with your audience, enhance brand identity, and improve communication across channels.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" /><line x1="13.5" y1="6.5" x2="17.5" y2="10.5" /></svg>`,
       bgColor: '#FF8C42',
       bgPattern: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
     },
     {
       title: 'UX/UI Design',
-      content: 'Creating intuitive, human-centered digital experiences.',
+      content: `Create intuitive, user-centered digital experiences using research and design thinking principles to enhance engagement and satisfaction.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-artboard" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><rect x="8" y="8" width="8" height="8" rx="1" /><line x1="3" y1="8" x2="4" y2="8" /><line x1="3" y1="16" x2="4" y2="16" /><line x1="8" y1="3" x2="8" y2="4" /><line x1="16" y1="3" x2="16" y2="4" /><line x1="20" y1="8" x2="21" y2="8" /><line x1="20" y1="16" x2="21" y2="16" /><line x1="8" y1="20" x2="8" y2="21" /><line x1="16" y1="20" x2="16" y2="21" /></svg>`,
       bgColor: '#38A3A5',
       bgPattern: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M80 0v80H0V0h80zM20 20v40h40V20H20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
     },
     {
       title: 'AI & Automation Solutions',
-      content: 'Leveraging emerging technologies to optimize business performance.',
+      content: `Utilize AI and automation to optimize processes, improve efficiency, and provide actionable insights, helping businesses remain competitive.`,
       icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-robot" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7h10a2 2 0 0 1 2 2v1l1 1v3l-1 1v3a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-3l-1 -1v-3l1 -1v-1a2 2 0 0 1 2 -2z" /><path d="M10 16h4" /><circle cx="8.5" cy="11.5" r=".5" fill="currentColor" /><circle cx="15.5" cy="11.5" r=".5" fill="currentColor" /><path d="M9 7l-1 -4" /><path d="M15 7l1 -4" /></svg>`,
       bgColor: '#571089',
       bgPattern: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
@@ -194,7 +194,7 @@
         <img src="/top.png" alt="Laptop frame" class="laptop-image" />
         <div class="video-wrapper">
           <video autoplay muted loop playsinline>
-            <source src="https://res.cloudinary.com/dnvus1oig/video/upload/methslsp4lordavoyxji.mp4" type="video/mp4" />
+            <source src="/perfection.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -212,7 +212,7 @@
               {@html slides[activeSlide].icon}
             </div>
             <h3>{slides[activeSlide].title}</h3>
-            <p>{slides[activeSlide].content}</p>
+            <p style="color: peachpuff;">{slides[activeSlide].content}</p>
           </div>
         {/key}
       </div>
@@ -233,16 +233,24 @@
     </div>
   </section>
 
-  <section class="approach-section">
-    <div class="container">
-      <div class="content-block reveal-on-scroll puff-in" bind:this={sections[12]}>
-        <h2>Our Approach</h2>
-        <p>
-          At Auralab, we believe every brand has a unique frequency. Our mission is to tune into that frequency and amplify it through design, technology, and strategy — creating digital experiences that resonate across cultures and platforms.
-        </p>
-      </div>
+ <section class="approach-section">
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="/backgroundvid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
-  </section>
+    <div class="video-overlay"></div> <!-- New div for overlay -->
+    <div class="container" style="position: relative; z-index: 2;">
+        <div class="content-block reveal-on-scroll puff-in" bind:this={sections[12]}>
+            <h2>Our Approach</h2>
+            <p>
+                At Auralab, we believe every brand has a unique frequency. Our mission is to tune into that frequency and amplify it through design, technology, and strategy — creating digital experiences that resonate across cultures and platforms.
+            </p>
+        </div>
+    </div>
+</section>
+
 
   <section class="values-section">
     <svg class="drip-svg bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
@@ -269,6 +277,29 @@
 </main>
 
 <style>
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place video behind content */
+    overflow: hidden; /* Clipping to prevent overflow */
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    opacity: 0.5; /* Set opacity of the video */
+}
+
   .about-page {
     padding-top: 0;
     position: relative;
@@ -383,9 +414,8 @@
   }
 
   .approach-section {
-    background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+      background: none;
   }
-
   .blob {
     position: absolute;
     width: 400px;
@@ -536,7 +566,7 @@
 
   .values-section {
     padding: 5rem 0 6rem;
-    background: linear-gradient(180deg, #fff 0%, #f8f9fa 100%);
+    background: linear-gradient(180deg, #ffdbdb 0%, #f8f9fa 100%);
     position: relative;
   }
 
@@ -735,4 +765,41 @@
     height: 23%;
     }
   }
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Above video, below content */
+    background: linear-gradient(135deg, rgba(106, 130, 251, 0.6), rgba(252, 92, 125, 0.6)); /* Example gradient */
+}
+
+/* New card styling for content-block within approach-section */
+.approach-section .content-block {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 3rem; /* Increase padding */
+    max-width: 700px; /* Adjust max-width for card */
+    margin: 0 auto; /* Center the card */
+    position: relative; /* To ensure z-index works */
+    z-index: 2; /* Above the overlay */
+}
+
+.approach-section .content-block h2 {
+    color: #333; /* Ensure text color is readable */
+    margin-bottom: 1.5rem;
+}
+
+.approach-section .content-block p {
+    color: #555; /* Ensure text color is readable */
+}
+
+@media (max-width: 768px) {
+    .approach-section .content-block {
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+}
 </style>
