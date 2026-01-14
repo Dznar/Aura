@@ -566,7 +566,7 @@
 
   .values-section {
     padding: 5rem 0 6rem;
-    background: linear-gradient(180deg, #ffdbdb 0%, #f8f9fa 100%);
+    background: linear-gradient(180deg, #dda0ddb2 0%, #f8f9fa 100%);
     position: relative;
   }
 
