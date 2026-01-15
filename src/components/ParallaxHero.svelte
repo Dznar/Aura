@@ -64,7 +64,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden; /* Important for containing the layers */
-    background-color: #0c001f; /* Darker fallback color */
+    background-color: #00061f;
   }
 
   .parallax-wrapper {
