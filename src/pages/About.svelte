@@ -266,7 +266,7 @@
     <div class="container">
       <h2 class="reveal-on-scroll bounce-in" bind:this={sections[13]}>Our Values</h2>
       <div class="values-grid">
-        {#each ['Innovation', 'Collaboration', 'Integrity', 'Excellence', 'Global Mindset'] as value, i}
+        {#each ['Passion', 'Innovation', 'Creativity', 'Integrity', 'Excellence'] as value, i}
           <div class="value-item shake-hover" bind:this={sections[14 + i]} style="--delay: {0.1 * (i + 1)}s">
             <h3>{value}</h3>
           </div>
